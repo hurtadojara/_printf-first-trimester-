@@ -2,19 +2,22 @@
 #include <stdio.h>
 #include "holberton.h"
 
-int get_lenght(char *s)
-{
-  int i = 0;
 
-  while (s[i] != '\0')
+int _printf(const char *format)
+{
+  int i;
+  char ch;
+
+  for (i = 0; format[i] != '\0'; i++)
   {
-    i++;
+    ch = format[i];
+    if (ch == '%')
+    {
+      if (format[i + 1] == 'c')
+      {
+        printf("%s\n", "se detecto char");
+      }
+    }
   }
   return (i);
-}
-
-int _printf(const char *format, ...)
-{
-  int len = (format != NULL) ? get_lenght(format) : NULL;
-  return (len);
 }

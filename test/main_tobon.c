@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-    printf("%i\n", _printf("oelo"));
+  _printf("Sin comodines %c %c %c %c");
     return (0);
 }
