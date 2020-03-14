@@ -9,6 +9,8 @@
  */
 int main(void)
 {
-  _printf("comodines: %s %s %s\n", "andres", "camilo", "tobon");
+  char *nombre = "Andres";
+  char *apellido = "Tobon";
+  _printf("Nombre: %s \napellido: %s \n", nombre, apellido);
     return (0);
 }
