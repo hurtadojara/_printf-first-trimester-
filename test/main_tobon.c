@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-  _printf("Sin comodines %c %c %c %c");
+  _printf("comodines: %s %s %s\n", "andres", "camilo", "tobon");
     return (0);
 }

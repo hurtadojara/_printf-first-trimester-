@@ -3,21 +3,26 @@
 #include "holberton.h"
 
 
-int _printf(const char *format)
+int _printf(const char *format, ...)
 {
   int i;
   char ch;
+  va_list arg;
+
+  va_start(arg, format);
 
   for (i = 0; format[i] != '\0'; i++)
   {
     ch = format[i];
     if (ch == '%')
     {
-      if (format[i + 1] == 'c')
+      switch (format[i + 1])
       {
-        printf("%s\n", "se detecto char");
+        case 's':
+        fprintf(stdout, va_arg(arg, char *));
       }
     }
+    putchar((format[i] == '%' && format[i + 1] == 's') ? 0 : format[i]);
   }
   return (i);
 }
