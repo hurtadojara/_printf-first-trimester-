@@ -1,5 +1,5 @@
 #include <limits.h>
-#include <stdio.h>
+
 #include "holberton.h"
 
 /**
@@ -11,6 +11,16 @@ int main(void)
 {
   char *nombre = "Andres";
   char *apellido = "Tobon";
-  _printf("Nombre: %s \napellido: %s \n", nombre, apellido);
+  char z = 'z';
+
+  // impresion comun
+  _printf("Hello world!!\n");
+  // imprimir strings
+_printf("Nombre: %s \napellido: %s\n", nombre, apellido);
+  //imprimir chars con strings
+for (int a = 'a'; a <= 'z'; a++)
+{
+  _printf(" %s : %c \n", "Letra", a);
+}
     return (0);
 }

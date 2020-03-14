@@ -17,10 +17,33 @@ int lenght(char *s)
   return (i);
 }
 
+void validator(char ch, ...)
+{
+  va_list arg2;
+  int x;
+  char *temp;
+  char temp2;
+
+  va_start(arg2, ch);
+  if (ch == 's')
+  {
+    temp = va_arg(arg2, char *);
+    for (x = 0; x < lenght(temp); x++)
+    {
+      _putchar(temp[x]);
+    }
+  }
+  else if (ch == 'c')
+  {
+    temp2 = va_arg(arg2, int);
+    _putchar(temp2);
+  }
+}
+
 int _printf(const char *format, ...)
 {
-  int i, x, index = 0;
-  char ch;
+  int i, x, final_len = 0;
+  char ch, temp;
   va_list arg;
   char *str;
   va_start(arg, format);
@@ -33,17 +56,19 @@ int _printf(const char *format, ...)
       i++;
       if (format[i] == 's')
       {
-        index = format[i + 1];
-        str = va_arg(arg, char *);
-        for (x = 0; x < lenght(str); x++)
-        {
-          _putchar(str[x]);
-        }
+        final_len += lenght(str);
+        validator(format[i], va_arg(arg, char *));
+        i++;
+      }
+      if (format[i] == 'c')
+      {
+        final_len += 1;
+        validator(format[i], va_arg(arg, int));
         i++;
       }
     }
-
+    final_len += i;
     _putchar(format[i]);
   }
-  return (i);
+  return (final_len);
 }
