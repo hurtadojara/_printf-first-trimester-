@@ -22,5 +22,10 @@ for (int a = 'a'; a <= 'z'; a++)
 {
   _printf(" %s : %c \n", "Letra", a);
 }
-    return (0);
+    // pruebas del main de holberton
+  _printf("Character:[%c]\n", 'H');
+  _printf("Character:[%c]\n", 'H');
+  _printf("String:[%s]\n", "I am a string !");
+  _printf("String:[%s]\n", "I am a string !");
+  return (0);
 }
