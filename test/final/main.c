@@ -11,7 +11,6 @@ int main(void)
 {
   char *nombre = "Andres";
   char *apellido = "Tobon";
-  char z = 'z';
 
   // impresion comun
   _printf("Hello world!!\n");
