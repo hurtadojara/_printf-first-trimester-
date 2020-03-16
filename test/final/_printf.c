@@ -6,11 +6,12 @@
   * process_format - print all format
   * @fmt: format
   * @arg: variadic paratemerts
+	* Return: byte size of value
   */
 int process_format(const char *fmt, va_list *arg)
 {
 	char ch;
-	int i, counter = 0;
+	int i, counter = 0, int_container;
 
 	for (i = 0; fmt[i] != '\0'; i++)
 	{
@@ -30,7 +31,14 @@ int process_format(const char *fmt, va_list *arg)
 			}
 			if (fmt[i] == 'd')
 			{
-				counter += validator(fmt[i], va_arg(*arg, int));
+				int_container = va_arg(*arg, int);
+				fill_int(fmt[i], int_container, &counter);
+				i++;
+			}
+			if (fmt[i] == 'i')
+			{
+				int_container = va_arg(*arg, int);
+				fill_int(fmt[i], int_container, &counter);
 				i++;
 			}
 		}
@@ -51,7 +59,6 @@ int _printf(const char *format, ...)
 
 	va_start(arg, format);
 	final = process_format(format, &arg);
-	printf("Caracteres impresos: %i\n", final);
 	va_end(arg);
 	return (final);
 }

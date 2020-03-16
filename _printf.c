@@ -6,11 +6,12 @@
   * process_format - print all format
   * @fmt: format
   * @arg: variadic paratemerts
+	* Return: byte size of value
   */
-void process_format(const char *fmt, va_list *arg)
+int process_format(const char *fmt, va_list *arg)
 {
 	char ch;
-	int i;
+	int i, counter = 0, int_container;
 
 	for (i = 0; fmt[i] != '\0'; i++)
 	{
@@ -20,22 +21,31 @@ void process_format(const char *fmt, va_list *arg)
 			i++;
 			if (fmt[i] == 's')
 			{
-				validator(fmt[i], va_arg(*arg, char *));
+				counter += validator(fmt[i], va_arg(*arg, char *));
 				i++;
 			}
 			else if (fmt[i] == 'c')
 			{
-				validator(fmt[i], va_arg(*arg, int));
+				counter += validator(fmt[i], va_arg(*arg, int));
 				i++;
 			}
 			if (fmt[i] == 'd')
 			{
-				validator(fmt[i], va_arg(*arg, int));
+				int_container = va_arg(*arg, int);
+				fill_int(fmt[i], int_container, &counter);
+				i++;
+			}
+			if (fmt[i] == 'i')
+			{
+				int_container = va_arg(*arg, int);
+				fill_int(fmt[i], int_container, &counter);
 				i++;
 			}
 		}
+		counter++;
 		_putchar(fmt[i]);
 }
+		return (counter - 1);
 }
 /**
  * _printf - format and print data
@@ -48,7 +58,7 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	va_start(arg, format);
-	process_format(format, &arg);
+	final = process_format(format, &arg);
 	va_end(arg);
 	return (final);
 }
