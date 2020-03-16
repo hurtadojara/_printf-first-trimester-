@@ -28,9 +28,14 @@ void process_format(const char *fmt, va_list *arg)
 				validator(fmt[i], va_arg(*arg, int));
 				i++;
 			}
+			if (fmt[i] == 'd')
+			{
+				validator(fmt[i], va_arg(*arg, int));
+				i++;
+			}
 		}
 		_putchar(fmt[i]);
-  }
+}
 }
 /**
  * _printf - format and print data
