@@ -4,11 +4,7 @@
  * validator - find for placeholders and print paratemer
  * @ch: placeholder value
  */
-<<<<<<< HEAD
-int validator(char ch, ...)
-=======
 void validator(int ch, ...)
->>>>>>> f3e53929b5b5aa9e5d5e93b047a4a976935f8568
 {
 	va_list arg2;
 	int x;
