@@ -27,7 +27,7 @@ void validator(int ch, ...)
 		temp2 = va_arg(arg2, int);
 		_putchar(temp2);
 	}
-	else if(ch == 'd')
+	else if (ch == 'd')
 	{
 		temp3 = va_arg(arg2, int);
 		res = intochar(temp3);
@@ -36,4 +36,11 @@ void validator(int ch, ...)
 			_putchar(res[x]);
 		}
 	}
+	else if (ch == 'i')
+	{
+		temp3 = va_arg(arg2, int);
+		res = intochar(temp3);
+		for (x = 0; x < lenght(res); x++)
+		{
+			_putchar(res[x]);
 }
