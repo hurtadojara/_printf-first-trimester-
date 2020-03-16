@@ -1,28 +1,37 @@
 #include "holberton.h"
+#include <stdlib.h>
 char *intochar(int n)
 {
 char *s;
-int i, j;
+int i, j = n;
 int signo = n;
 /* Si es negativo cambiarlo a positivo */
 if (n < 0)
  n = -n;
 
 	i = 0;
-	while ( n != 0)
+	while ( j != 0)
 	 {
-			s[i] = (n %10) +‘0’;  // convertimos las cifras en su ASCII
-			n = n /10;
+			//s[i] = (n %10) +'0';
+			j = j /10;
 			i++;
 	 }
-
+   s = malloc(i * sizeof(int));
+   i = 0;
+   while ( n != 0)
+ 	 {
+ 			s[i] = (n %10) +'0';
+ 			n = n /10;
+ 			i++;
+ 	 }
 	 if(signo < 0)
 	 {
-		 s[i]=’-‘;
+		 s[i]='-';
 		 i++;
 		 s[i]= '\0';
 	 }
 	 else
 		 s[i]= '\0';
 
-rev_array(s);
+   return (rev_array(s));
+}

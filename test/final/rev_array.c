@@ -1,8 +1,9 @@
+#include <stdlib.h>
 #include "holberton.h"
 
 char *rev_array(char *s)
 {
-   char r[(lenght (s))];
+   char *r = malloc(lenght(s) * sizeof(char));
    int begin, end, count = 0;
 
    while (s[count] != '\0')
