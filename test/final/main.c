@@ -20,11 +20,13 @@ _printf("Nombre: %s \napellido: %s\n", nombre, apellido);
 for (int a = 'a'; a <= 'z'; a++)
 {
   _printf(" %s : %c \n", "Letra", a);
+
 }
     // pruebas del main de holberton
   _printf("Character:[%c]\n", 'H');
   _printf("Character:[%c]\n", 'H');
   _printf("String:[%s]\n", "I am a string !");
   _printf("String:[%s]\n", "I am a string !");
+  _printf(" %s : %d \n", "Letra", -20);
   return (0);
 }
