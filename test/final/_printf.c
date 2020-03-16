@@ -23,7 +23,7 @@ void process_format(const char *fmt, va_list *arg)
 				validator(fmt[i], va_arg(*arg, char *));
 				i++;
 			}
-			if (fmt[i] == 'c')
+			else if (fmt[i] == 'c')
 			{
 				validator(fmt[i], va_arg(*arg, int));
 				i++;
