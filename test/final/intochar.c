@@ -11,8 +11,8 @@ if (n < 0)
 	i = 0;
 	while ( n != 0)
 	 {
-			s[i] = n %10 + ‘0’;  // convertimos las cifras en su ASCII
-			n= n /10;
+			s[i] = (n %10) +‘0’;  // convertimos las cifras en su ASCII
+			n = n /10;
 			i++;
 	 }
 
