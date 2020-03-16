@@ -27,6 +27,12 @@ for (int a = 'a'; a <= 'z'; a++)
   _printf("Character:[%c]\n", 'H');
   _printf("String:[%s]\n", "I am a string !");
   _printf("String:[%s]\n", "I am a string !");
-  _printf(" %s : %d \n", "Letra", -20);
+  // imprimir numeros
+  int len = 20393, len2 = 30293;
+  _printf("Length:[%d, %d]\n", len, len);
+    _printf("Length:[%d, %d]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    _printf("Negative:[%d]\n", -762534);
+    _printf("%s\n", "andres");
   return (0);
 }
