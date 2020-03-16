@@ -4,7 +4,7 @@
 int _printf(const char *format, ...);
 int _putchar(char character);
 int lenght(char *s);
-void validator(char ch, ...);
+void validator(int ch, ...);
 char *intochar(int n);
 char *rev_array(char *s);
 #endif
