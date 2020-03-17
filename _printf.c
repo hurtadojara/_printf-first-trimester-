@@ -2,12 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
-
+/**
+ * cases - validate cases next to %
+ * @ch: option
+ * @arg: arguments list
+ * Return: counter of char printed
+ */
 int cases(char ch, va_list *arg)
 {
 	int counter = 0, int_container = 0;
 
-	switch (ch) {
+	switch (ch)
+	{
 		case 's':
 			counter += validator(ch, va_arg(*arg, char *));
 			break;
@@ -40,6 +46,7 @@ int process_format(const char *fmt, va_list *arg)
 {
 	char ch;
 	int i, counter = 0;
+
 	for (i = 0; fmt[i] != '\0'; i++)
 	{
 		ch = fmt[i];
@@ -48,6 +55,8 @@ int process_format(const char *fmt, va_list *arg)
 			ch = fmt[i + 1];
 			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd')
 				counter += cases(ch, arg);
+			else
+				return (-1);
 			i += 2;
 		}
 		if (fmt[i] != '\0')
