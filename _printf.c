@@ -5,7 +5,7 @@
 /**
   * process_format - print all format
   * @fmt: format
-  * @arg: variadic paratemerts
+  * @arg: variadic parameters
 	* Return: byte size of value
   */
 int process_format(const char *fmt, va_list *arg)
@@ -45,7 +45,7 @@ int process_format(const char *fmt, va_list *arg)
 		counter++;
 		_putchar(fmt[i]);
 }
-		return (counter - 1);
+		return (counter);
 }
 /**
  * _printf - format and print data
