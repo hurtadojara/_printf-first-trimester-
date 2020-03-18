@@ -49,7 +49,7 @@ int cases(char ch, va_list *arg)
 int process_format(const char *fmt, va_list *arg)
 {
 	char ch;
-	int i, counter = 0;
+	int i, counter = 0, numeric, alphabetic;
 
 	for (i = 0; fmt[i] != '\0';)
 	{
@@ -58,9 +58,11 @@ int process_format(const char *fmt, va_list *arg)
 		{
 			i++;
 			ch = fmt[i];
-			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd')
+			alphabetic = (ch == 's' || ch == 'c' || ch == '%');
+			numeric = (ch == 'i' || ch == 'd');
+			if ((alphabetic || numeric) ? 1 : 0)
 				counter += cases(ch, arg);
-				else
+			else
 				counter += dont_found(ch);
 			i++;
 		}

@@ -29,8 +29,8 @@ printf("%s", "This sentence is retrieved from va_args!\n");
 _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
 
-_printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0); //verificar si hay error aca
-printf("Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0); //verificar si hay error aca
+_printf("sisas Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0); //verificar si hay error aca
+printf("sisas Complete the sentence: You %s nothing, Jon Snow.\n", (char *)0); //verificar si hay error aca
 
 _printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
 printf("%c%cth %s%s a%cg%s: Y%sou %s no%ching%s Snow.%c", 'W', 'i', "some ", "more", 'r', "s", "", "know", 't', ", Jon", '\n');
