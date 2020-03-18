@@ -11,6 +11,7 @@
 int cases(char ch, va_list *arg)
 {
 	int counter = 0, int_container = 0;
+	unsigned int uns_container = 0;
 
 	switch (ch)
 	{
@@ -30,6 +31,10 @@ int cases(char ch, va_list *arg)
 		case 'd':
 			int_container = va_arg(*arg, int);
 			fill_int(ch, int_container, &counter);
+			break;
+		case 'u':
+			uns_container = va_arg(*arg, unsigned int);
+			fill_int(ch, uns_container, &counter);
 			break;
 	}
 	return (counter);
@@ -51,7 +56,7 @@ int process_format(const char *fmt, va_list *arg)
 		if (ch == '%')
 		{
 			ch = fmt[i + 1];
-			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd')
+			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd' || ch == 'u')
 				counter += cases(ch, arg);
 			i += 2;
 		}

@@ -27,6 +27,13 @@ void fill_int(char ch, int arg, int *c)
 	else
 		_putchar('0');
 }
+void fill_uns(char ch, unsigned int arg, int *c)
+{
+	if (arg != 0)
+		*c += validator(ch, arg);
+	else
+		_putchar('0');
+}
 /**
  * validator - find for placeholders and print paratemer
  * @ch: placeholder value
@@ -38,6 +45,7 @@ int validator(int ch, ...)
 	char *temp, *res = 0;
 	char temp2;
 	int temp3;
+	unsigned int temp4;
 
 	va_start(arg2, ch);
 	if (ch == 's')
@@ -56,6 +64,13 @@ int validator(int ch, ...)
 	{
 		temp3 = va_arg(arg2, int);
 		res = intochar(temp3);
+		stout_print(res);
+		return (lenght(res));
+	}
+	else if (ch == 'u')
+	{
+		temp4 = va_arg(arg2, unsigned int);
+		res = intochar(temp4);
 		stout_print(res);
 		return (lenght(res));
 	}
