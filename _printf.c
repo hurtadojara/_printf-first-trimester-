@@ -71,7 +71,7 @@ int process_format(const char *fmt, va_list *arg)
 			i++;
 		}
 	}
-		return (counter);
+		return (counter - 1);
 }
 /**
  * _printf - format and print data
