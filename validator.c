@@ -34,10 +34,9 @@ void fill_int(char ch, int arg, int *c)
 int validator(int ch, ...)
 {
 	va_list arg2;
-	char *temp;
+	char *temp, char *res = 0;
 	char temp2;
 	int temp3;
-	char *res = 0;
 
 	va_start(arg2, ch);
 	if (ch == 's')
@@ -52,14 +51,7 @@ int validator(int ch, ...)
 		_putchar(temp2);
 		return (1);
 	}
-	else if (ch == 'd')
-	{
-		temp3 = va_arg(arg2, int);
-		res = intochar(temp3);
-		stout_print(res);
-		return (lenght(res));
-	}
-	else if (ch == 'i')
+	else if (ch == 'd' || ch == 'i')
 	{
 		temp3 = va_arg(arg2, int);
 		res = intochar(temp3);

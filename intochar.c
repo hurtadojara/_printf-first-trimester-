@@ -13,7 +13,6 @@ char *intochar(int n)
 
 	if (n < 0)
 	n = -n;
-
 	i = 0;
 	while (j != 0)
 	{
