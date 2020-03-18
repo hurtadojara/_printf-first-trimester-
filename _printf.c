@@ -59,6 +59,7 @@ int process_format(const char *fmt, va_list *arg)
 			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd' || ch == 'u')
 				counter += cases(ch, arg);
 			i += 2;
+			
 		}
 		if (fmt[i] != '\0')
 		{
