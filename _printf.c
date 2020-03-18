@@ -50,24 +50,22 @@ int process_format(const char *fmt, va_list *arg)
 	char ch;
 	int i, counter = 0;
 
-	for (i = 0; fmt[i] != '\0'; i++)
+	for (i = 0; fmt[i] != '\0';)
 	{
 		ch = fmt[i];
 		if (ch == '%')
 		{
-			ch = fmt[i + 1];
+			i++;
+			ch = fmt[i];
 			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd')
 				counter += cases(ch, arg);
-		i += 2;
+			i++;
 		}
-		if (fmt[i] != '\0')
+		if (fmt[i] != '\0' && fmt[i] != '%')
 		{
 			counter++;
 			_putchar(fmt[i]);
-		}
-		else
-		{
-			break;
+			i++;
 		}
 	}
 		return (counter);
