@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdlib.h>
 #include "holberton.h"
 /**
  * stout_print - print char of string to stdout
@@ -41,7 +42,7 @@ int validator(int ch, ...)
 	va_start(arg2, ch);
 	if (ch == 's')
 	{
-		temp = va_arg(arg2, char *);
+		temp = ((va_arg(arg2, char *)) != NULL) ? (va_arg(arg2, char *)) : "(null)";
 		stout_print(temp);
 		return (lenght(temp));
 	}

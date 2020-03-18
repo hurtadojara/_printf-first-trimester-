@@ -34,8 +34,6 @@ int cases(char ch, va_list *arg)
 	}
 	return (counter);
 }
-
-
 /**
   * process_format - print all format
   * @fmt: format
@@ -55,8 +53,6 @@ int process_format(const char *fmt, va_list *arg)
 			ch = fmt[i + 1];
 			if (ch == 's' || ch == 'c' || ch == '%' || ch == 'i' || ch == 'd')
 				counter += cases(ch, arg);
-			else
-				return (-1);
 			i += 2;
 		}
 		if (fmt[i] != '\0')
@@ -82,7 +78,10 @@ int _printf(const char *format, ...)
 	va_list arg;
 
 	va_start(arg, format);
-	final = process_format(format, &arg);
+	if (format != NULL)
+		final = process_format(format, &arg);
+	else
+		return (-1);
 	va_end(arg);
 	return (final);
 }
