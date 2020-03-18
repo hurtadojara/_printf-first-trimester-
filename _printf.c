@@ -23,6 +23,7 @@ int cases(char ch, va_list *arg)
 			break;
 		case '%':
 			_putchar('%');
+			counter += 1;
 			break;
 		case 'i':
 			int_container = va_arg(*arg, int);
