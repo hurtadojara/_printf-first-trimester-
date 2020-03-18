@@ -27,6 +27,12 @@ void fill_int(char ch, int arg, int *c)
 	else
 		_putchar('0');
 }
+/**
+*fill_uns - validate unsigned integer
+* @ch : char to validator
+* @arg: unsigned to validate
+* @c: pointer to counter
+*/
 void fill_uns(char ch, unsigned int arg, int *c)
 {
 	if (arg != 0)
