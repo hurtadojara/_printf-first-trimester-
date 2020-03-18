@@ -8,4 +8,5 @@ int validator(int ch, ...);
 char *intochar(int n);
 char *rev_array(char *s);
 void fill_int(char ch, int arg, int *c);
+int dont_found(char ch);
 #endif

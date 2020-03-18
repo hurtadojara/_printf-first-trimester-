@@ -68,4 +68,8 @@ printf("%!\n");
 _printf("%K\n");
 printf("%K\n");
 
+int l = _printf("%K%s%%%c\n", "olas", '5');
+int l1 = printf("%K%s%%%c\n", "olas", '5');
+printf("1: %i, 2 : %i\n", l, l1);
+
 }
