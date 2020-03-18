@@ -34,7 +34,7 @@ void fill_int(char ch, int arg, int *c)
 int validator(int ch, ...)
 {
 	va_list arg2;
-	char *temp, char *res = 0;
+	char *temp, *res = 0;
 	char temp2;
 	int temp3;
 
