@@ -1,0 +1,25 @@
+.TH _PRINTF "18 March 2020" "0.1" "HOLBERTON SCHOOL"
+.SH _PRINTF - print formated values
+.br
+.SH Prototypes
+int _printf(const char *format, ...);
+.br
+.SH DESCRIPTION
+Write string to stdout with format values, if error return -1
+.SH Format Specifiers
+%s: string
+.br
+%c: char
+.br
+%d: decimal
+.br
+%i: integer
+.br
+%%: single %
+.SH BUGS
+No knows bugs
+.SH AUTORS
+Andres Hurtado -
+Andres Tobon
+.br
+.b Holberton School
