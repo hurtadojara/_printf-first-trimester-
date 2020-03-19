@@ -57,6 +57,8 @@ int process_format(const char *fmt, va_list *arg)
 		if (ch == '%')
 		{
 			i++;
+			if (fmt[i] == '\0')
+				return (-1);
 			ch = fmt[i];
 			alphabetic = (ch == 's' || ch == 'c' || ch == '%');
 			numeric = (ch == 'i' || ch == 'd');
@@ -82,14 +84,14 @@ int process_format(const char *fmt, va_list *arg)
  */
 int _printf(const char *format, ...)
 {
-	int final = 0;
+	int out = 0;
 	va_list arg;
 
 	va_start(arg, format);
 	if (format != NULL)
-		final = process_format(format, &arg);
+		out = process_format(format, &arg);
 	else
 		return (-1);
 	va_end(arg);
-	return (final);
+	return (out);
 }
