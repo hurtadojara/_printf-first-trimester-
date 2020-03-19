@@ -46,11 +46,7 @@ char *intochar(int n)
 	if (signo < 0)
 	{
 		s[i] = '-';
-		i++;
-		s[i] = '\0';
 	}
-	else
-	s[i] = '\0';
 
 	return (rev_array(s));
 }
