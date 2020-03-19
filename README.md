@@ -31,23 +31,18 @@ s
 If no l modifier is present: The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0'); if a precision is specified, no more than the number specified are written. If a precision is given, no null byte need be present; if the precision is not specified, or is greater than the size of the array, the array must contain a terminating null byte.
 
 Example
-To print Pi to five decimal places:
 
-#include <math.h>
-#include <stdio.h>
-fprintf(stdout, "pi = %.5f\n", 4 * atan(1.0));
-To print a date and time in the form "Sunday, July 3, 10:02", where weekday and month are pointers to strings:
-#include <stdio.h>
-fprintf(stdout, "%s, %s %d, %.2d:%.2d\n",
-        weekday, month, day, hour, min);
-Many countries use the day-month-year order. Hence, an internationalized version must be able to print the arguments in an order specified by the format:
-#include <stdio.h>
-fprintf(stdout, format,
-        weekday, month, day, hour, min);
-where format depends on locale, and may permute the arguments. With the value:
-"%1$s, %3$d. %2$s, %4$d:%5$.2d\n"
-one might obtain "Sonntag, 3. Juli, 10:02".
-To allocate a sufficiently large string and print into it (code correct for both glibc 2.0 and glibc 2.1):
+#include "holberton.h"
+int main ()
+{
+  int age = 20;
+
+_printf("my age is:%d\n", age);
+}
+
+output:
+
+my age is:20
 
 If truncation occurs in glibc versions prior to 2.0.6, this is treated as an error instead of being handled gracefully.
 
