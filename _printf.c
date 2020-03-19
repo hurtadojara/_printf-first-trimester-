@@ -49,7 +49,7 @@ int cases(char ch, va_list *arg)
 int process_format(const char *fmt, va_list *arg)
 {
 	char ch;
-	int i, counter = 0, numeric, alphabetic, x;
+	int i, counter = 0, numeric, alphabetic;
 
 	for (i = 0; fmt[i] != '\0';)
 	{
