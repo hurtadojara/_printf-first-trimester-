@@ -11,7 +11,7 @@
 int cases(char ch, va_list *arg)
 {
 	int counter = 0, int_container = 0;
-	unsigned int uns_container = 0;
+	char *rev;
 
 	switch (ch)
 	{
@@ -33,9 +33,9 @@ int cases(char ch, va_list *arg)
 			int_container = va_arg(*arg, int);
 			fill_int(ch, int_container, &counter);
 			break;
-		case 'u':
-			uns_container = va_arg(*arg, unsigned int);
-			fill_int(ch, uns_container, &counter);
+		case 'r':
+			rev = (va_arg(*arg, char *));
+			counter += stout_print((rev != NULL) ? rev_array(rev) : "(null)");
 			break;
 	}
 	return (counter);
@@ -60,7 +60,7 @@ int process_format(const char *fmt, va_list *arg)
 			if (fmt[i] == '\0')
 				return (-1);
 			ch = fmt[i];
-			alphabetic = (ch == 's' || ch == 'c' || ch == '%');
+			alphabetic = (ch == 's' || ch == 'c' || ch == '%' || ch == 'r');
 			numeric = (ch == 'i' || ch == 'd');
 			if ((alphabetic || numeric) ? 1 : 0)
 				counter += cases(ch, arg);

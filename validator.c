@@ -4,8 +4,9 @@
 /**
  * stout_print - print char of string to stdout
  * @str: string
+ * Return: lenght of string printed
  */
-void stout_print(char *str)
+int stout_print(char *str)
 {
 	int x;
 
@@ -13,6 +14,7 @@ void stout_print(char *str)
 	{
 		_putchar(str[x]);
 	}
+	return (x);
 }
 /**
  * fill_int - validate integer
@@ -51,7 +53,6 @@ int validator(int ch, ...)
 	char *temp, *res = 0;
 	char temp2;
 	int temp3;
-	unsigned int temp4;
 
 	va_start(arg2, ch);
 	if (ch == 's')
@@ -70,13 +71,6 @@ int validator(int ch, ...)
 	{
 		temp3 = va_arg(arg2, int);
 		res = intochar(temp3);
-		stout_print(res);
-		return (lenght(res));
-	}
-	else if (ch == 'u')
-	{
-		temp4 = va_arg(arg2, unsigned int);
-		res = intochar(temp4);
 		stout_print(res);
 		return (lenght(res));
 	}
